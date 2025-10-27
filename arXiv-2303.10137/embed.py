@@ -6,7 +6,7 @@ import sys
 import tarfile
 from typing import Any
 
-import click
+import rich_click as click
 import torch
 import torch.utils.data as utils
 import torchvision.transforms.v2.functional as F
