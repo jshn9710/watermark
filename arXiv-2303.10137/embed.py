@@ -130,7 +130,6 @@ def main(**args: dict[str, Any]) -> None:
     with torch.inference_mode():
         for images, _ in tqdm.tqdm(
             dataloader,
-            total=len(dataset),
             unit='images',
             desc='Fingerprinting images',
         ):

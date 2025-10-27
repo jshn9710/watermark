@@ -108,7 +108,6 @@ def main(**args: dict[str, Any]) -> None:
 
     for images, _ in tqdm.tqdm(
         dataloader,
-        total=len(dataset),
         unit='images',
         desc='Detecting fingerprints',
     ):
