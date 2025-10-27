@@ -1,6 +1,7 @@
 import csv
 import multiprocessing as mp
 import pathlib
+import sys
 from typing import Any
 
 import rich_click as click
@@ -101,7 +102,7 @@ def main(**args: dict[str, Any]) -> None:
         dataset,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=mp.cpu_count(),
+        num_workers=mp.cpu_count() if sys.platform != 'win32' else 0,
         pin_memory=True if args.accelerator == 'gpu' else False,
     )
 
