@@ -124,7 +124,7 @@ def main(**args: dict[str, Any]) -> None:
         batch_size=args.batch_size,
         shuffle=True,
         num_workers=mp.cpu_count() if sys.platform != 'win32' else 0,
-        pin_memory=True if args.accelerator == 'gpu' else False,
+        pin_memory=True if args.accelerator != 'cpu' else False,
     )
 
     net = StegaStampModule(args)
