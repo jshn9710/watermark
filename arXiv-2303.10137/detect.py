@@ -110,7 +110,7 @@ def main(**args: dict[str, Any]) -> None:
         dataloader,
         total=len(dataset),
         unit='images',
-        description='Detecting fingerprints',
+        desc='Detecting fingerprints',
     ):
         images = torch.as_tensor(images, device=args.device)
         fingerprints = net.decoder(images)
