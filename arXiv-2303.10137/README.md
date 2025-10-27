@@ -51,7 +51,7 @@ After training, you should find the trained model checkpoint in `./torchrun/CIFA
 Now, you can use the trained StegaStamp model to embed watermarks into images and detect them. Here is an example of embedding and detecting watermarks on CIFAR10 dataset:
 
 ```bash
-python embed_watermark.py \
+python embed.py \
   --checkpoint_path ./results/CIFAR10/stegastamp.ckpt \
   --dataset CIFAR10 \
   --input_dir ./datasets \
@@ -67,7 +67,7 @@ We use `seed` and `identical_fingerprints` to ensure that the same fingerprints 
 Finally, you can detect the watermarks from the watermarked images using the following command:
 
 ```bash
-python detect_watermark.py \
+python detect.py \
   --checkpoint_path ./results/CIFAR10/stegastamp.ckpt \
   --dataset CIFAR10 \
   --input_dir ./datasets \
