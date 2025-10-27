@@ -209,4 +209,5 @@ def main(**args: dict[str, Any]) -> None:
 
 
 if __name__ == '__main__':
+    click.rich_click.THEME = 'nord-box'
     main()
