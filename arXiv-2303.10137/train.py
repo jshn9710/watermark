@@ -110,12 +110,8 @@ os.environ['WANDB_API_KEY'] = 'your-api-key'  # Replace with your actual Wandb A
     help='BCE loss weight for fingerprint reconstruction.',
     show_default=True,
 )
-def parse_args(**args: dict[str, Any]) -> AttributeDict:
+def main(**args: dict[str, Any]) -> None:
     args = AttributeDict(args)
-    return args
-
-
-def main(args: AttributeDict) -> None:
     dataset = load_dataset(
         name=args.dataset,
         root=args.input_dir,
@@ -158,5 +154,4 @@ def main(args: AttributeDict) -> None:
 
 if __name__ == '__main__':
     click.rich_click.THEME = 'nord-box'
-    args = parse_args()
-    main(args)
+    main()

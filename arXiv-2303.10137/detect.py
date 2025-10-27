@@ -72,12 +72,8 @@ from utils import AttributeDict, IntOrTuple, generate_random_fingerprints
     default=42,
     help='Random seed to sample fingerprints. Default: 42.',
 )
-def parse_args(**args: dict[str, Any]):
+def main(**args: dict[str, Any]) -> None:
     args = AttributeDict(args)
-    return args
-
-
-def main(args: AttributeDict):
     net = StegaStampModule.load_from_checkpoint(
         args.checkpoint_path,
         map_location=args.device,
@@ -147,5 +143,4 @@ def main(args: AttributeDict):
 
 
 if __name__ == '__main__':
-    args = parse_args()
-    main(args)
+    main()
