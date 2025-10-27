@@ -31,7 +31,7 @@ from utils import AttributeDict, IntOrTuple, generate_random_fingerprints
 )
 @click.option(
     '--input_dir',
-    type=click.Path(exists=True),
+    type=click.Path(),
     required=True,
     help='Directory containing training images.',
 )

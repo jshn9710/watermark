@@ -15,7 +15,7 @@ from utils import AttributeDict, IntOrTuple, generate_random_fingerprints
 @click.command()
 @click.option(
     '--checkpoint_path',
-    type=str,
+    type=click.Path(exists=True),
     required=True,
     help='Path to trained StegaStamp encoder/decoder.',
 )
@@ -27,13 +27,13 @@ from utils import AttributeDict, IntOrTuple, generate_random_fingerprints
 )
 @click.option(
     '--input_dir',
-    type=str,
+    type=click.Path(),
     required=True,
     help='Directory containing training images.',
 )
 @click.option(
     '--output_dir',
-    type=str,
+    type=click.Path(),
     required=True,
     help='Path to save watermarked images to.',
 )

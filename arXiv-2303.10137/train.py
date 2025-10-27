@@ -23,7 +23,7 @@ os.environ['WANDB_API_KEY'] = 'your-api-key'  # Replace with your actual Wandb A
 )
 @click.option(
     '--input_dir',
-    type=click.Path(exists=True),
+    type=click.Path(),
     required=True,
     help='Directory containing training images.',
 )
